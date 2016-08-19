@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "0.10"
+  - "4.1"
 
 before_script:
   - export DISPLAY=:99.0
@@ -10,9 +10,12 @@ before_script:
   - ./nodeserver.sh > /dev/null &
 
 script:
-  - grunt integrate
+  - npm run test:integrate
 
 sudo: false
 
 git:
   depth: 10
+
+notifications:
+  slack: angularbuddies:b6leQM9gkBCW0S7MNDsELpqU
